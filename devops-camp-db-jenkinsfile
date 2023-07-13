@@ -13,8 +13,8 @@ pipeline {
         //TODO: add stages to pipeline
         stage('Application repository') {
             steps {
-                echo "https://github.com/axa4979/afs-labs-student"
-                sh 'git clone <YOUR AFS-LABS-STUDENT REPO URL>'
+                echo "https://github.com/axa4979/afs-labs-student.git"
+                sh 'git clone https://github.com/axa4979/afs-labs-student.git'
                 dir('afs-labs-student') {
                     script {
                         env.COMMIT_HASH = sh(script: 'git log --format=format:%h -1 --follow database/database.sql', returnStdout: true).trim()
